@@ -29,15 +29,38 @@
         <!-- Welcome Paragraphes -->
         <section class="mt-7">
             <p class="
-                text-center text-2xl font-medium
+                text-center text-2xl font-medium 
             ">Welcome to TSLIFA</p>
             <p class="
                 text-center text-xl mt-3.5 font-light
             ">Simulez, comparez et trouvez le prêt qui vous convient</p>
         </section>
+        <!-- Boutton -->
         <button class="
             bg-[#00E673] hover:bg-[#00CC66] text-white p-2 rounded-xl hover:scale-[1.05] cursor-pointer mt-7 text-xl font-medium
-        ">Simulez un credit</button>
+        " id="SimulationButton">
+            Simulez un credit
+        </button>
+        <footer class="
+            flex justify-center items-center mt-10 
+        ">
+            <p class="
+                text-xs flex justify-center items-center text-[grey]
+            ">🔒 Tout votre simulation est fait en secret</p>
+        </footer>
     </main>
 </body>
+<script>
+        // apres 15s la page de welcome va supprimer et la page de home va ouvrit
+        setTimeout(function () {
+            window.open("home.html" , "_blank");
+            window.close("index.html");
+        } , 15000);
+
+        // si j'ai appuye sur le boutton la page de welcome va supprimer et la page de home va ouvrit
+        let SimulationButton = document.getElementById("SimulationButton").addEventListener("click" , function () {
+            window.open("home.html" , "_blank");
+            window.close("index.html");
+        });
+</script>
 </html>
