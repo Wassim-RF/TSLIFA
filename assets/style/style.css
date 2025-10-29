@@ -9,3 +9,27 @@ body {
     padding: 0;
     overflow-x: hidden;
 }
+
+.button_credit_afterCllick {
+    background-color: #fbf8f1;
+}
+
+.button_credit_afterCllick:hover {
+    background-color: #faf4e7;
+}
+
+.button_credit_beforCllick {
+    background-color: #c0c0c0;
+}
+
+.button_credit_beforCllick:hover {
+    background-color: #b2b1b1;
+}
+
+.button_profession_afterClicked {
+    border: #ff7a00 2px solid;
+}
+
+.button_profession_afterClicked p:last-child{
+    display: block;
+}

@@ -4,8 +4,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TSLIFA</title>
+    <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" href="assets/style/output.css">
 </head>
 <body>
-    
+    <header class="shadow-black shadow-md rounded-xl flex justify-start items-center">
+        <div class="
+            flex flex-row items-center pt-5 pl-7  pb-3
+        ">
+            <div class="
+                bg-[#00E673] rounded-xl w-[50px] h-[50px] flex justify-center items-center shadow-black shadow-xs flex-row
+            "> <!-- Logo -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24">
+                    <path fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="1.5" d="M16.441 8.26S15.884 5.621 12 5.334m-4.376 10.52S8.75 18.518 12 18.684M12 2.75v2.584m0 15.916v-2.567m0-13.35a10 10 0 0 0-.704-.024c-1.688 0-3.881 1.405-3.881 3.367c0 1.963 1.589 2.732 4.388 3.21s4.782 1.531 4.782 3.696s-2.32 3.11-4.266 3.11a6 6 0 0 1-.319-.009"/>
+                </svg>
+            </div>
+            <p class="
+                text-[20px] font-medium ml-3.5
+            ">TSLIFA</p>
+        </div>
+    </header>
+    <main class="mt-10">
+        <div class="flex justify-center gap-4">
+            <button id="credit_Consommation--Button" class="button_credit_afterCllick bg-[#fbf8f1] p-2.5 pb-3.5 rounded-t-xl hover:bg-[#faf4e7] cursor-pointer text-xl">Credit Consommation</button>
+            <button id="credit_Investisemment--Button" class="button_credit_beforCllick bg-[#c0c0c0] p-2.5 pb-3.5 rounded-t-xl hover:bg-[#b2b1b1] cursor-pointer text-xl">Credit d'investissement</button>
+        </div>
+        <div class="flex justify-center items-center flex-col">
+            <!-- Credit consommation -->
+            <section id="credit_Consommation--section" class="
+                flex justify-center items-center w-[1300px] h-[600px] rounded-3xl
+            ">
+                <!-- section de select profession -->
+                <section id="" class="
+                    flex items-center flex-row w-full h-full
+                ">
+                    <!-- steps div -->
+                    <div class="
+                        bg-[#D9D9D9] w-[300px] h-full flex justify-center items-center flex-col gap-2
+                    ">
+                        <div class="flex justify-center items-center flex-col gap-1">
+                            <img src="assets/image/completed-step.png" alt="completed step" class="w-4">
+                            <p class="text-[#155DFC] font-medium">Selection Profession</p>
+                        </div>
+                        <div class="flex justify-center items-center flex-col gap-1">
+                            <img src="assets/image/incompleted.png" alt="completed step" class="w-4">
+                            <p class="text-[#c0c0c0] font-medium">Le mentant et duree </p>
+                        </div>
+                        <div class="flex justify-center items-center flex-col gap-1">
+                            <img src="assets/image/incompleted.png" alt="completed step" class="w-4">
+                            <p class="text-[#c0c0c0] font-medium">Info personnel</p>
+                        </div>
+                        <div class="flex justify-center items-center flex-col gap-1">
+                            <img src="assets/image/incompleted.png" alt="completed step" class="w-4">
+                            <p class="text-[#c0c0c0] font-medium">Result</p>
+                        </div>
+                    </div>
+                    <!-- seletion profession div -->
+                    <div class="
+                        bg-[#FBF8F1] w-[1100px] h-full
+                    ">
+                        <p class="font-medium text-3xl flex justify-center items-center mt-4 h-10">Selction votre profession</p>
+                        <div class="
+                            grid grid-cols-5 justify-center items-center gap-2 ml-2 mr-2 mt-20 h-[200px] w-full
+                        ">
+                            <button class="group flex justify-center flex-col items-center  border-black border w-[175px] h-[175px] ml-2 cursor-pointer hover:border-[#FF7A00] hover:scale-[1.01] hover:border-2" id="button_profession--fonctionnaire">
+                                <img src="assets/image/profession/fanctionnair.png" alt="fonctionnair">
+                                <p>Fonctionnair</p>
+                                <p class="hidden group-hover:block group-active:block">8%</p>
+                            </button>
+                            <button class="group flex justify-center flex-col items-center  border-black border w-[175px] h-[175px] ml-2 cursor-pointer hover:border-[#FF7A00] hover:scale-[1.01] hover:border-2" id="button_profession--salarie">
+                                <img src="assets/image/profession/salarie.png" alt="salarie">
+                                <p>Salarie</p>
+                                <p class="hidden group-hover:block">10%</p>
+                            </button>
+                            <button class="group flex justify-center flex-col items-center  border-black border w-[175px] h-[175px] ml-2 cursor-pointer hover:border-[#FF7A00] hover:scale-[1.01] hover:border-2" id="button_profession--retraite">
+                                <img src="assets/image/profession/retraite.png" alt="retraite">
+                                <p>Retraite</p>
+                                <p class="hidden group-hover:block">8%</p>
+                            </button>
+                            <button class="group flex justify-center flex-col items-center  border-black border w-[175px] h-[175px] ml-2 cursor-pointer hover:border-[#FF7A00] hover:scale-[1.01] hover:border-2" id="button_profession--professionnel">
+                                <img src="assets/image/profession/professionnel.png" alt="professionnel">
+                                <p>Professionnel</p>
+                                <p class="hidden group-hover:block">11%</p>
+                            </button>
+                            <button class="group flex justify-center flex-col items-center  border-black border w-[175px] h-[175px] ml-2 cursor-pointer hover:border-[#FF7A00] hover:scale-[1.01] hover:border-2" id="button_profession--sansEmploi">
+                                <img src="assets/image/profession/sansAmploi.png" alt="sans emploi">
+                                <p>Sans emploi</p>
+                            </button>
+                        </div>
+                        <div class="flex justify-center items-center" id="button">
+                            <button class="bg-[#FF7A00] w-32 h-10 text-white text-xl cursor-pointer hover:bg-[#e17007] hover:text-2xl hover:scale-[1.01] mt-11"> Continue </button>
+                        </div>
+                    </div>
+                </section>
+                <section></section>
+                <section></section>
+                <section></section>
+                <section></section>
+            </section>
+            <!-- Credit investissement -->
+            <section id="credit_Investisemment--section" class="
+                flex justify-center items-center w-[1300px] h-[600px] rounded-3xl hidden
+            ">
+                <div class="bg-[#FBF8F1] h-full w-full">
+                    <p class="font-extrabold text-[300px] flex justify-center items-center">404</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="
+        flex justify-center items-center mt-10
+    ">
+        <p class="
+            text-xs flex justify-center items-center text-[#c0c0c0]
+        ">🔒 Tout votre simulation est fait en secret</p>
+    </footer>
+    <script src="assets/js/creditTypeChange.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
