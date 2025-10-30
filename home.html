@@ -35,7 +35,7 @@
                 flex justify-center items-center w-[1300px] h-[600px] rounded-3xl
             ">
                 <!-- section de select profession -->
-                <section id="" class="
+                <section id="select_profession_section" class="
                     flex items-center flex-row w-full h-full
                 ">
                     <!-- steps div -->
@@ -93,11 +93,60 @@
                             </button>
                         </div>
                         <div class="flex justify-center items-center" id="button">
-                            <button class="bg-[#FF7A00] w-32 h-10 text-white text-xl cursor-pointer hover:bg-[#e17007] hover:text-2xl hover:scale-[1.01] mt-11"> Continue </button>
+                            <button class="bg-[#FF7A00] w-32 h-10 text-white text-xl cursor-pointer hover:bg-[#e17007] hover:text-2xl hover:scale-[1.01] mt-11" id="continueProfessionButton"> Continue </button>
                         </div>
                     </div>
                 </section>
-                <section></section>
+                <!-- Selection de mentant et duree -->
+                <section id="select_mentant&durre_section" class="hidden items-center flex-row w-full h-full">
+                    <!-- steps div -->
+                    <div class="
+                        bg-[#D9D9D9] w-[300px] h-full flex justify-center items-center flex-col gap-2
+                    ">
+                        <div class="flex justify-center items-center flex-col gap-1">
+                            <img src="assets/image/completed-step.png" alt="completed step" class="w-4">
+                            <p class="text-[#155DFC] font-medium">Selection Profession</p>
+                        </div>
+                        <div class="flex justify-center items-center flex-col gap-1">
+                            <img src="assets/image/completed-step.png" alt="completed step" class="w-4">
+                            <p class="text-[#155dfc] font-medium">Le mentant et duree</p>
+                        </div>
+                        <div class="flex justify-center items-center flex-col gap-1">
+                            <img src="assets/image/incompleted.png" alt="completed step" class="w-4">
+                            <p class="text-[#c0c0c0] font-medium">Info personnel</p>
+                        </div>
+                        <div class="flex justify-center items-center flex-col gap-1">
+                            <img src="assets/image/incompleted.png" alt="completed step" class="w-4">
+                            <p class="text-[#c0c0c0] font-medium">Result</p>
+                        </div>
+                    </div>
+                    <!-- Select le mentant et la duree -->
+                    <div class="w-full flex justify-center flex-col">
+                        <p class="font-medium text-3xl flex justify-center  mt-4 h-10 w-full">Selction votre profession</p>
+                        <div class="w-full flex justify-center items-center flex-col gap-20">
+                            <!-- le mentant -->
+                            <div class="bg-[#d9d9d9] w-6/7 flex items-center">
+                                <div class="w-full">
+                                    <div class="flex justify-between items-center">
+                                        <p class="ml-[35px]">Mentant</p>
+                                        <p class="mr-[150px]">5000-20000 MAD</p>
+                                    </div>
+                                    <div class="flex items-center justify-evenly">
+                                        <input type="range" min="0" max="20000" value="0" class="w-[650px] h-12 accent-black" id="mentant_range">
+                                        <div class="flex items-center">
+                                            <input type="number" class="w-16 outline-none bg-white p-0.5"  id="number_range_mentant">
+                                            <p class="bg-[#ff7a00] text-white p-0.5">MAD</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="w-10 h-10 rounded-full bg-red-500 justify-center items-center mr-3 text-2xl text-white hidden">✕</div>
+                                    <div class="w-10 h-10 rounded-full bg-green-500 justify-center items-center mr-3 text-2xl text-white hidden">✓</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 <section></section>
                 <section></section>
                 <section></section>

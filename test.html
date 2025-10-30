@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Range Input</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#f5f2ed] flex items-center justify-center h-screen">
+
+  <div class="bg-gray-300 w-[700px] rounded p-3 flex items-center justify-between">
+    <div>
+      <label for="amount" class="block text-gray-800 font-medium mb-1">Montant</label>
+      <input id="rangeInput" type="range" min="5000" max="20000" value="5000" 
+             class="w-96 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-black">
+    </div>
+
+    <div class="flex items-center space-x-2">
+      <p id="rangeValue" class="text-gray-800 font-medium">5000 - 20000 MAD</p>
+      <div class="flex items-center border border-gray-400 rounded">
+        <input type="number" id="customValue" class="w-20 p-1 outline-none text-right" placeholder="MAD">
+        <span class="bg-orange-500 text-white px-2 font-bold">MAD</span>
+      </div>
+      <button id="resetBtn" class="bg-red-600 text-white rounded-full w-6 h-6 flex items-center justify-center font-bold text-sm">X</button>
+    </div>
+  </div>
+
+  <script>
+    const range = document.getElementById('rangeInput');
+    const rangeValue = document.getElementById('rangeValue');
+    const customValue = document.getElementById('customValue');
+    const resetBtn = document.getElementById('resetBtn');
+
+    // تحديث القيمة لما يتحرك السلايدر
+    range.addEventListener('input', () => {
+      rangeValue.textContent = `${range.value} - 20000 MAD`;
+      customValue.value = range.value;
+    });
+
+    // تحديث السلايدر لما يتغير الإدخال اليدوي
+    customValue.addEventListener('input', () => {
+      const val = parseInt(customValue.value);
+      if (!isNaN(val) && val >= 5000 && val <= 20000) {
+        range.value = val;
+        rangeValue.textContent = `${val} - 20000 MAD`;
+      }
+    });
+
+    // زر إعادة التعيين
+    resetBtn.addEventListener('click', () => {
+      range.value = 5000;
+      customValue.value = '';
+      rangeValue.textContent = `5000 - 20000 MAD`;
+    });
+  </script>
+
+</body>
+</html>
