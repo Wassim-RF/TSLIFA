@@ -20,6 +20,7 @@ let Mentant = mentantRange.value;
 let Duree = dureeRange.value;
 let Salair = salairRange.value;
 
+
 // calculer le mentant de credit
 numberRangeMentant.addEventListener("input" , function() {
     mentantRange.value = numberRangeMentant.value;
@@ -154,4 +155,43 @@ let continuetoInfoSectionBUtton = document.getElementById("toInfoSectionBUtton")
         alert("Vous avez lesse votre menttant est duree vide")
         console.log(Mentant);
     }
+});
+// continue au resultat
+let continuetoResultPage = document.getElementById("toResultPage").addEventListener("click" , () => {
+    if (Salair !== "0") {
+        let select_info_section = document.getElementById("select_info_section").style.display = "none";
+        let resultSection = document.getElementById("resultSection").style.display = "flex";
+    } else {
+        alert("Entrer votre salaire");
+    }
+    console.log("Clicked");
+    Salair = (Salair * 40) / 100;
+    console.log(Salair);
+    if (Salair >= VerMen) {
+        let creditAccepte = document.getElementById("creditAccepte").style.display = "flex";
+        let creditMentant = document.getElementById("creditMentant").textContent = Mentant; 
+        let pourcentageCredit = document.getElementById("pourcentageCredit").textContent = TEG * 12 * 100;
+        let dureeCredit = document.getElementById("dureeCredit").textContent = Duree;
+        let versementCredit = document.getElementById("versementCredit").textContent = VerMen ;
+        let total = eval( Mentant + (Mentant * TEG));
+        let totalCredit = document.getElementById("totalCredit").textContent = total;
+    } else {
+        let creditRefuse = document.getElementById("creditRefuse").style.display = "flex";
+    }
+});
+
+// revient a la page precedent 
+let revenueAuInfoPage = document.getElementById("revenueAuInfoPage").addEventListener("click" , () => {
+    let select_info_section = document.getElementById("select_info_section").style.display = "flex";
+    let resultSection = document.getElementById("resultSection").style.display = "none";
+});
+
+let returnToMentantDuree = document.getElementById("returnToMentantDuree").addEventListener("click" , () => {
+    let select_mentantDure_section = document.getElementById("select_mentant&durre_section").style.display = "flex";
+    let select_info_section = document.getElementById("select_info_section").style.display = "none";
+});
+
+let returnToHome = document.getElementById("returnToHome").addEventListener("click" , () => {
+    let select_profession_section = document.getElementById("select_profession_section").style.display = "flex";
+    let select_mentantDure_section = document.getElementById("select_mentant&durre_section").style.display = "none";
 })

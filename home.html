@@ -36,7 +36,7 @@
             ">
                 <!-- section de select profession -->
                 <section id="select_profession_section" class="
-                    flex items-center flex-row w-full h-full hidden
+                    flex items-center flex-row w-full h-full
                 ">
                     <!-- steps div -->
                     <div class="
@@ -121,7 +121,7 @@
                         </div>
                     </div>
                     <!-- Select le mentant et la duree -->
-                    <div class="w-full h-full flex justify-center flex-col items-center">
+                    <div class="w-full h-full flex justify-center flex-col items-center bg-[#FBF8F1]">
                         <p class="font-medium text-3xl flex justify-center  mt-4 h-10 w-full">Selction le mentant du credit et la duree</p>
                         <div class="w-full flex justify-center items-center flex-col gap-20">
                             <!-- le mentant -->
@@ -166,7 +166,7 @@
                             </div>
                         </div>
                         <div class="grid grid-cols-2" id="button">
-                            <button class="bg-white border border-b-orange-500 text-black w-32 h-10 text-xl cursor-pointer hover:text-2xl hover:scale-[1.01] mt-11 mr-48">←</button>
+                            <button class="bg-white border border-b-orange-500 text-black w-32 h-10 text-xl cursor-pointer hover:text-2xl hover:scale-[1.01] mt-11 mr-48" id="returnToHome">←</button>
                             <button class="bg-[#FF7A00] w-32 h-10 text-white text-xl cursor-pointer hover:bg-[#e17007] hover:text-2xl hover:scale-[1.01] mt-11 ml-48" id="toInfoSectionBUtton"> Continue </button>
                         </div>
                     </div>
@@ -195,7 +195,7 @@
                         </div>
                     </div>
                     <!-- Enter info div -->
-                    <div class="flex justify-center items-center flex-col w-full h-full gap-20">
+                    <div class="flex justify-center items-center flex-col w-full h-full gap-20 bg-[#FBF8F1]">
                         <p class="font-medium text-3xl flex justify-center items-center mt-4 h-10">Entrer votre info</p>
                         <div class="w-5/6 flex justify-center items-center flex-col gap-y-10">
                             <div class="w-full">
@@ -222,7 +222,7 @@
                                     <div class="flex items-center justify-evenly">
                                         <input type="range" min="0" max="1000000" value="0" class="w-[650px] h-12 accent-black" id="Salair_range" required>
                                         <div class="flex items-center">
-                                            <input type="number" class="w-16 outline-none bg-white p-0.5"  id="salair_range_mentant">
+                                            <input type="number" value="0" class="w-16 outline-none bg-white p-0.5"  id="salair_range_mentant">
                                             <p class="bg-[#ff7a00] text-white p-0.5">MAD</p>
                                         </div>
                                     </div>
@@ -230,12 +230,13 @@
                             </div>
                         </div>
                         <div class="grid grid-cols-2" id="button">
-                            <button class="bg-white border border-b-orange-500 text-black w-32 h-10 text-xl cursor-pointer hover:text-2xl hover:scale-[1.01] mr-48">←</button>
-                            <button class="bg-[#FF7A00] w-32 h-10 text-white text-xl cursor-pointer hover:bg-[#e17007] hover:text-2xl hover:scale-[1.01] ml-48"> Continue </button>
+                            <button class="bg-white border border-b-orange-500 text-black w-32 h-10 text-xl cursor-pointer hover:text-2xl hover:scale-[1.01] mr-48" id="returnToMentantDuree">←</button>
+                            <button class="bg-[#FF7A00] w-32 h-10 text-white text-xl cursor-pointer hover:bg-[#e17007] hover:text-2xl hover:scale-[1.01] ml-48" id="toResultPage"> Continue </button>
                         </div>
                     </div>
                 </section>
-                <section class="flex items-center flex-row w-full h-full">
+                <!-- resultat -->
+                <section class="hidden items-center flex-row w-full h-full" id="resultSection">
                     <!-- Steps div -->
                     <div class="bg-[#D9D9D9] w-[300px] h-full flex justify-center items-center flex-col gap-2">
                         <div class="flex justify-center items-center flex-col gap-1">
@@ -255,8 +256,9 @@
                             <p class="text-[#155dfc] font-medium">Result</p>
                         </div>
                     </div>
-                    <div>
-                        <div class="flex flex-col justify-center items-center gap-y-10">
+                    <div class="bg-[#FBF8F1] w-full h-full">
+                        <!-- Accepte -->
+                        <div class="hidden flex-col justify-center items-center gap-y-10 mt-5" id="creditAccepte">
                             <div class="bg-green-500 w-[100px] h-[100px] flex justify-center items-center text-white text-6xl rounded-[100%]">
                                 ✓
                             </div>
@@ -267,28 +269,28 @@
                                     <div class="border-2 border-black flex items-center w-[60%] h-[35px] p-1">
                                         <p>Credit mentant :</p>
                                         <div class="flex items-center gap-10"> 
-                                            <p class="ml-4 w-12">20000</p>
+                                            <p class="ml-4 w-12" id="creditMentant"></p>
                                             <div class="h-5/6 bg-[#ff7a00] text-white pl-0.5 pr-0.5">MAD</div>
                                         </div>
                                     </div>
                                     <div class="border-2 border-black flex items-center w-[60%] h-[35px] p-1">
                                         <p>Pourcentage : </p>
                                         <div class="flex items-center gap-10"> 
-                                            <p class="ml-4 w-12">20000</p>
+                                            <p class="ml-4 w-12" id="pourcentageCredit"></p>
                                             <div class="h-5/6 bg-[#ff7a00] text-white pl-0.5 pr-0.5">%</div>
                                         </div>
                                     </div>
                                     <div class="border-2 border-black flex items-center w-[60%] h-[35px] p-1">
                                         <p>Duree de credit :</p>
                                         <div class="flex items-center gap-10"> 
-                                            <p class="ml-4 w-12">20000</p>
+                                            <p class="ml-4 w-12" id="dureeCredit"></p>
                                             <div class="h-5/6 bg-[#ff7a00] text-white pl-0.5 pr-0.5">MO</div>
                                         </div>
                                     </div>
                                     <div class="border-2 border-black flex items-center w-[60%] h-[35px] p-1">
                                         <p>Versement :</p>
                                         <div class="flex items-center gap-10"> 
-                                            <p class="ml-4 w-12">20000</p>
+                                            <p class="ml-4 w-12" id="versementCredit"></p>
                                             <div class="h-5/6 bg-[#ff7a00] text-white pl-0.5 pr-0.5">MAD/MO</div>
                                         </div>
                                     </div>
@@ -296,14 +298,31 @@
                                 <div class="border-2 border-black flex items-center w-[22%] h-[35px] p-1 mr-40">
                                     <p>Total :</p>
                                     <div class="flex items-center gap-10"> 
-                                        <p class="ml-4 w-12">20000</p>
+                                        <p class="ml-4 w-16" id="totalCredit"></p>
                                         <div class="h-5/6 bg-[#ff7a00] text-white pl-0.5 pr-0.5">MAD</div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="grid grid-cols-2 mt-5" id="button">
+                                <button class="bg-white border border-b-orange-500 text-black w-32 h-10 text-xl cursor-pointer hover:text-2xl hover:scale-[1.01] ml-32" id="revenueAuInfoPage">←</button>
+                                <a href="index.html">
+                                    <button class="bg-[#FF7A00] w-36 h-10 text-white text-xl cursor-pointer hover:bg-[#e17007]  ml-48"> Revenue au welcome </button>
+                                </a>
+                            </div>
                         </div>
-
-                        <div class="hidden"></div>
+                        <!-- Refuse -->
+                        <div class="hidden flex-col justify-center items-center gap-y-10 mt-5" id="creditRefuse">
+                            <div class="bg-red-500 w-[100px] h-[100px] flex justify-center items-center text-white text-6xl rounded-[100%]">
+                                ✕
+                            </div>
+                            <p>Votre credit n’est pas effectuer </p>
+                            <p class="text-center w-3/5">Le credit qui fait en 13/03/2022 est d’id numero 7230 ne fait pas en succe car mensualité dépasse 40% du votre salaire</p>
+                            <div class="flex w-full justify-center items-center">
+                                <a href="index.html">
+                                    <button class="bg-[#c0c0c0] w-40 h-10 text-white text-xl cursor-pointer hover:bg-[#e17007] hover:text-2xl hover:scale-[1.01] ml-48"> Revenue au welcome </button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </section>
