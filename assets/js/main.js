@@ -5,16 +5,16 @@ const buttonProfessionProfessionnel = document.getElementById("button_profession
 const buttonProfessionSansEmploi = document.getElementById("button_profession--sansEmploi");
 let buttoonOfProfessionPressed = false;
 
-let TEG; // taux nominal annuel
 
-// fonction de calculer le versement mentionnel
+// Calculer le versement mentionnel
 let mentantRange = document.getElementById("mentant_range");
 let numberRangeMentant = document.getElementById("number_range_mentant");
-let dureeRange = document.getElementById("duree_rangee");
+let dureeRange = document.getElementById("duree_range");
 let numberRangeDuree = document.getElementById("number_range_duree");
+let TEG; // taux nominal annuel
 let VerMen; 
-let Mentant;
-let Duree;
+let Mentant = mentantRange.value;
+let Duree = dureeRange.value;
 
 // calculer le mentant de credit
 numberRangeMentant.addEventListener("input" , function() {
@@ -25,10 +25,24 @@ mentantRange.addEventListener("input" , function () {
     Mentant = mentantRange.value;
     numberRangeMentant.value = mentantRange.value;
 });
-
+// calculer la duree
+numberRangeDuree.addEventListener("input" , function() {
+    dureeRange.value = numberRangeDuree.value;
+    Duree = dureeRange.value;
+    console.log(Duree)
+});
+dureeRange.addEventListener("input" , function () {
+    Duree = dureeRange.value;
+    numberRangeDuree.value = dureeRange.value;
+    console.log(Duree)
+});
 
 TEG = TEG/12;
 VerMen = Mentant * ((TEG * ((1 + TEG) ** Duree)) / (((1 + TEG) ** Duree) - 1));
+
+
+
+
 
 buttonProfessionFonctionnaire.addEventListener("click" , () => {
     buttonProfessionFonctionnaire.classList.add("button_profession_afterClicked");
@@ -88,20 +102,35 @@ buttonProfessionSansEmploi.addEventListener("click" , () => {
     buttonProfessionRetraite.classList.remove("button_profession_afterClicked");
     buttonProfessionProfessionnel.classList.remove("button_profession_afterClicked");
     buttonProfessionSansEmploi.classList.add("button_profession_afterClicked");
-    buttoonOfProfessionPressed = true;
 
 
     console.log("Error");
 });
 
-// continue au section deuxieme
+
+
+// Change les section
+
+// continue au section de select de mentant et duree
 let continueProfessionButton = document.getElementById("continueProfessionButton").addEventListener("click" , () => {
     if (buttoonOfProfessionPressed) {
         let select_profession_section = document.getElementById("select_profession_section").style.display = "none";
         let select_mentantDure_section = document.getElementById("select_mentant&durre_section").style.display = "flex";
         console.log("Is clicked");
+        console.log(TEG);
     } else {
         alert("Vous ne selection pas votre profession");
     }
-    console.log(TEG);
 });
+
+// continue au section de selection de info
+let continuetoInfoSectionBUtton = document.getElementById("toInfoSectionBUtton").addEventListener("click" , () => {
+    if (Mentant !== "0") {
+        let select_mentantDure_section = document.getElementById("select_mentant&durre_section").style.display = "none";
+        let select_info_section = document.getElementById("select_info_section").style.display = "flex";
+        console.log(Mentant);
+    } else {
+        alert("Vous avez lesse votre menttant est duree vide")
+        console.log(Mentant);
+    }
+})

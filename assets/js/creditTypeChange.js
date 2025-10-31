@@ -24,5 +24,5 @@ creditInvestisemmentButton.addEventListener("click" , () => {
     creditConsommationButton.classList.remove("button_credit_afterCllick");
     // la part du le credit qui va apparaitre ou qui va disparu 
     creditConsommationSection.style.display = "none";
-    creditInvestisemmentSection.style.display = "block";
+    creditInvestisemmentSection.style.display = "flex";
 });

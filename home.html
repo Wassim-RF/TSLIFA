@@ -32,11 +32,11 @@
         <div class="flex justify-center items-center flex-col">
             <!-- Credit consommation -->
             <section id="credit_Consommation--section" class="
-                flex justify-center items-center w-[1300px] h-[600px] rounded-3xl
+                flex justify-center items-center w-[1300px] h-[600px] rounded-3xl 
             ">
                 <!-- section de select profession -->
                 <section id="select_profession_section" class="
-                    flex items-center flex-row w-full h-full
+                    flex items-center flex-row w-full h-full 
                 ">
                     <!-- steps div -->
                     <div class="
@@ -61,7 +61,7 @@
                     </div>
                     <!-- seletion profession div -->
                     <div class="
-                        bg-[#FBF8F1] w-[1100px] h-full
+                        bg-[#FBF8F1] w-full h-full
                     ">
                         <p class="font-medium text-3xl flex justify-center items-center mt-4 h-10">Selction votre profession</p>
                         <div class="
@@ -121,8 +121,8 @@
                         </div>
                     </div>
                     <!-- Select le mentant et la duree -->
-                    <div class="w-full flex justify-center flex-col">
-                        <p class="font-medium text-3xl flex justify-center  mt-4 h-10 w-full">Selction votre profession</p>
+                    <div class="w-full h-full flex justify-center flex-col items-center">
+                        <p class="font-medium text-3xl flex justify-center  mt-4 h-10 w-full">Selction le mentant du credit et la duree</p>
                         <div class="w-full flex justify-center items-center flex-col gap-20">
                             <!-- le mentant -->
                             <div class="bg-[#d9d9d9] w-6/7 flex items-center">
@@ -134,7 +134,7 @@
                                     <div class="flex items-center justify-evenly">
                                         <input type="range" min="0" max="20000" value="0" class="w-[650px] h-12 accent-black" id="mentant_range">
                                         <div class="flex items-center">
-                                            <input type="number" class="w-16 outline-none bg-white p-0.5"  id="number_range_mentant">
+                                            <input type="number" value="0" class="w-16 outline-none bg-white p-0.5"  id="number_range_mentant">
                                             <p class="bg-[#ff7a00] text-white p-0.5">MAD</p>
                                         </div>
                                     </div>
@@ -144,16 +144,105 @@
                                     <div class="w-10 h-10 rounded-full bg-green-500 justify-center items-center mr-3 text-2xl text-white hidden">✓</div>
                                 </div>
                             </div>
+                            <!-- la duree -->
+                            <div class="bg-[#d9d9d9] w-6/7 flex items-center">
+                                <div class="w-full">
+                                    <div class="flex justify-between items-center">
+                                        <p class="ml-[35px]">La duree</p>
+                                        <p class="mr-[150px]">12-24 MO</p>
+                                    </div>
+                                    <div class="flex items-center justify-evenly">
+                                        <input type="range" min="0" max="24" value="0" class="w-[650px] h-12 accent-black" id="duree_range">
+                                        <div class="flex items-center">
+                                            <input type="number" value="0" class="w-16 outline-none bg-white p-0.5"  id="number_range_duree">
+                                            <p class="bg-[#ff7a00] text-white p-0.5">MO</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="w-10 h-10 rounded-full bg-red-500 justify-center items-center mr-3 text-2xl text-white hidden">✕</div>
+                                    <div class="w-10 h-10 rounded-full bg-green-500 justify-center items-center mr-3 text-2xl text-white hidden">✓</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2" id="button">
+                            <button class="bg-white border border-b-orange-500 text-black w-32 h-10 text-xl cursor-pointer hover:text-2xl hover:scale-[1.01] mt-11 mr-48">←</button>
+                            <button class="bg-[#FF7A00] w-32 h-10 text-white text-xl cursor-pointer hover:bg-[#e17007] hover:text-2xl hover:scale-[1.01] mt-11 ml-48" id="toInfoSectionBUtton"> Continue </button>
                         </div>
                     </div>
                 </section>
-                <section></section>
-                <section></section>
-                <section></section>
+                <!-- Section de information -->
+                <section class="hidden items-center flex-row w-full h-full" id="select_info_section"> 
+                    <!-- Steps div -->
+                    <div class="
+                        bg-[#D9D9D9] w-[300px] h-full flex justify-center items-center flex-col gap-2
+                    ">
+                        <div class="flex justify-center items-center flex-col gap-1">
+                            <img src="assets/image/completed-step.png" alt="completed step" class="w-4">
+                            <p class="text-[#155DFC] font-medium">Selection Profession</p>
+                        </div>
+                        <div class="flex justify-center items-center flex-col gap-1">
+                            <img src="assets/image/completed-step.png" alt="completed step" class="w-4">
+                            <p class="text-[#155dfc] font-medium">Le mentant et duree </p>
+                        </div>
+                        <div class="flex justify-center items-center flex-col gap-1">
+                            <img src="assets/image/completed-step.png" alt="completed step" class="w-4">
+                            <p class="text-[#155dfc] font-medium">Info personnel</p>
+                        </div>
+                        <div class="flex justify-center items-center flex-col gap-1">
+                            <img src="assets/image/incompleted.png" alt="completed step" class="w-4">
+                            <p class="text-[#c0c0c0] font-medium">Result</p>
+                        </div>
+                    </div>
+                    <!-- Enter info div -->
+                    <div class="flex justify-center items-center flex-col w-full h-full gap-20">
+                        <p class="font-medium text-3xl flex justify-center items-center mt-4 h-10">Entrer votre info</p>
+                        <div class="w-5/6 flex justify-center items-center flex-col gap-y-10">
+                            <div class="w-full">
+                                <div class="grid grid-cols-2 justify-center gap-x-40 gap-y-10">
+                                    <div class="flex flex-col border-b-2 gap-y-2">
+                                        <label>Nom</label>
+                                        <input type="text" required class="outline-none" placeholder="Entre votre nom..."></div>
+                                    <div class="flex flex-col border-b-2 gap-y-2">
+                                        <label>Prenom</label>
+                                        <input type="text" required class="outline-none" placeholder="Entre votre prenom..."></div>
+                                    <div class="flex flex-col border-b-2 gap-y-2">
+                                        <label>Email</label>
+                                        <input type="email" required class="outline-none" placeholder="nomprenom@example.com"></div>
+                                    <div class="flex flex-col border-b-2 gap-y-2">
+                                        <label>Numero de telephone</label>
+                                        <input type="tel" required class="outline-none" placeholder="+212000000000"></div>
+                                </div>
+                            </div>
+                            <div class="bg-[#d9d9d9] w-full flex items-center justify-center">
+                                <div class="w-full">
+                                    <div>
+                                        <p class="ml-[35px]">La duree</p>
+                                    </div>
+                                    <div class="flex items-center justify-evenly">
+                                        <input type="range" min="0" max="24" value="0" class="w-[650px] h-12 accent-black" id="mentant_range">
+                                        <div class="flex items-center">
+                                            <input type="number" class="w-16 outline-none bg-white p-0.5"  id="number_range_mentant">
+                                            <p class="bg-[#ff7a00] text-white p-0.5">MAD</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2" id="button">
+                            <button class="bg-white border border-b-orange-500 text-black w-32 h-10 text-xl cursor-pointer hover:text-2xl hover:scale-[1.01] mr-48">←</button>
+                            <button class="bg-[#FF7A00] w-32 h-10 text-white text-xl cursor-pointer hover:bg-[#e17007] hover:text-2xl hover:scale-[1.01] ml-48"> Continue </button>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div></div>
+                    <div></div>
+                </section>
             </section>
             <!-- Credit investissement -->
             <section id="credit_Investisemment--section" class="
-                flex justify-center items-center w-[1300px] h-[600px] rounded-3xl hidden
+                justify-center items-center w-[1300px] h-[600px] rounded-3xl hidden
             ">
                 <div class="bg-[#FBF8F1] h-full w-full">
                     <p class="font-extrabold text-[300px] flex justify-center items-center">404</p>
@@ -170,5 +259,6 @@
     </footer>
     <script src="assets/js/creditTypeChange.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/changeSection.js"></script>
 </body>
 </html>
