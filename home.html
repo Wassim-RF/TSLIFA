@@ -32,11 +32,11 @@
         <div class="flex justify-center items-center flex-col">
             <!-- Credit consommation -->
             <section id="credit_Consommation--section" class="
-                flex justify-center items-center w-[1300px] h-[600px] rounded-3xl 
+                flex justify-center items-center w-[1300px] h-[600px] rounded-3xl
             ">
                 <!-- section de select profession -->
                 <section id="select_profession_section" class="
-                    flex items-center flex-row w-full h-full 
+                    flex items-center flex-row w-full h-full hidden
                 ">
                     <!-- steps div -->
                     <div class="
@@ -220,9 +220,9 @@
                                         <p class="ml-[35px]">La duree</p>
                                     </div>
                                     <div class="flex items-center justify-evenly">
-                                        <input type="range" min="0" max="24" value="0" class="w-[650px] h-12 accent-black" id="mentant_range">
+                                        <input type="range" min="0" max="1000000" value="0" class="w-[650px] h-12 accent-black" id="Salair_range" required>
                                         <div class="flex items-center">
-                                            <input type="number" class="w-16 outline-none bg-white p-0.5"  id="number_range_mentant">
+                                            <input type="number" class="w-16 outline-none bg-white p-0.5"  id="salair_range_mentant">
                                             <p class="bg-[#ff7a00] text-white p-0.5">MAD</p>
                                         </div>
                                     </div>
@@ -235,9 +235,76 @@
                         </div>
                     </div>
                 </section>
-                <section>
-                    <div></div>
-                    <div></div>
+                <section class="flex items-center flex-row w-full h-full">
+                    <!-- Steps div -->
+                    <div class="bg-[#D9D9D9] w-[300px] h-full flex justify-center items-center flex-col gap-2">
+                        <div class="flex justify-center items-center flex-col gap-1">
+                            <img src="assets/image/completed-step.png" alt="completed step" class="w-4">
+                            <p class="text-[#155DFC] font-medium">Selection Profession</p>
+                        </div>
+                        <div class="flex justify-center items-center flex-col gap-1">
+                            <img src="assets/image/completed-step.png" alt="completed step" class="w-4">
+                            <p class="text-[#155dfc] font-medium">Le mentant et duree </p>
+                        </div>
+                        <div class="flex justify-center items-center flex-col gap-1">
+                            <img src="assets/image/completed-step.png" alt="completed step" class="w-4">
+                            <p class="text-[#155dfc] font-medium">Info personnel</p>
+                        </div>
+                        <div class="flex justify-center items-center flex-col gap-1">
+                            <img src="assets/image/completed-step.png" alt="completed step" class="w-4">
+                            <p class="text-[#155dfc] font-medium">Result</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex flex-col justify-center items-center gap-y-10">
+                            <div class="bg-green-500 w-[100px] h-[100px] flex justify-center items-center text-white text-6xl rounded-[100%]">
+                                ✓
+                            </div>
+                            <p>Votre credit est effectuer en succe </p>
+                            <p class="text-center w-3/5">Le credit qui fait en 13/03/2022 est d’id numero 7230 est se fait en succe s’il te plait vien a l’agence de TSLIFA qui proche de vous</p>
+                            <div class="flex justify-center items-center w-full h-full  ml-32 flex-col gap-y-5">
+                                <div class="grid w-full grid-cols-2 gap-y-5">
+                                    <div class="border-2 border-black flex items-center w-[60%] h-[35px] p-1">
+                                        <p>Credit mentant :</p>
+                                        <div class="flex items-center gap-10"> 
+                                            <p class="ml-4 w-12">20000</p>
+                                            <div class="h-5/6 bg-[#ff7a00] text-white pl-0.5 pr-0.5">MAD</div>
+                                        </div>
+                                    </div>
+                                    <div class="border-2 border-black flex items-center w-[60%] h-[35px] p-1">
+                                        <p>Pourcentage : </p>
+                                        <div class="flex items-center gap-10"> 
+                                            <p class="ml-4 w-12">20000</p>
+                                            <div class="h-5/6 bg-[#ff7a00] text-white pl-0.5 pr-0.5">%</div>
+                                        </div>
+                                    </div>
+                                    <div class="border-2 border-black flex items-center w-[60%] h-[35px] p-1">
+                                        <p>Duree de credit :</p>
+                                        <div class="flex items-center gap-10"> 
+                                            <p class="ml-4 w-12">20000</p>
+                                            <div class="h-5/6 bg-[#ff7a00] text-white pl-0.5 pr-0.5">MO</div>
+                                        </div>
+                                    </div>
+                                    <div class="border-2 border-black flex items-center w-[60%] h-[35px] p-1">
+                                        <p>Versement :</p>
+                                        <div class="flex items-center gap-10"> 
+                                            <p class="ml-4 w-12">20000</p>
+                                            <div class="h-5/6 bg-[#ff7a00] text-white pl-0.5 pr-0.5">MAD/MO</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border-2 border-black flex items-center w-[22%] h-[35px] p-1 mr-40">
+                                    <p>Total :</p>
+                                    <div class="flex items-center gap-10"> 
+                                        <p class="ml-4 w-12">20000</p>
+                                        <div class="h-5/6 bg-[#ff7a00] text-white pl-0.5 pr-0.5">MAD</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hidden"></div>
+                    </div>
                 </section>
             </section>
             <!-- Credit investissement -->
@@ -259,6 +326,5 @@
     </footer>
     <script src="assets/js/creditTypeChange.js"></script>
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/changeSection.js"></script>
 </body>
 </html>
